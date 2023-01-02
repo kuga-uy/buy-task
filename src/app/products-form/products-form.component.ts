@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { IProduct } from '../interfaces';
+import { Product } from '../product.model';
 
 export const initialProductState = {
   description: '',
@@ -12,23 +12,23 @@ export const initialProductState = {
   styleUrls: ['./products-form.component.css'],
 })
 export class ProductsFormComponent {
-  productsList: IProduct[];
-  boughtList: IProduct[];
-  product: IProduct;
+  productsList: Product[];
+  boughtList: Product[];
+  product: Product;
   buy: any;
 
   constructor() {
     this.productsList = [];
     this.boughtList = [];
     this.buy = () => EventEmitter;
-    this.product = initialProductState;
+    this.product = new Product();
   }
 
   addToList(event: Event) {
     event.preventDefault();
     const currentProduct = { ...this.product };
     this.productsList.push(currentProduct);
-    this.product = initialProductState;
+    this.product = new Product();
   }
 
   bought(event: any) {

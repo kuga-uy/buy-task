@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IProduct } from '../interfaces';
+import { Product } from '../product.model';
 
 @Component({
   selector: 'app-cart',
@@ -7,14 +7,14 @@ import { IProduct } from '../interfaces';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-  @Input() products?: IProduct[];
-  @Output() productBought: EventEmitter<IProduct>;
+  @Input() products?: Product[];
+  @Output() productBought: EventEmitter<Product>;
 
   constructor() {
     this.productBought = new EventEmitter();
   }
 
-  buy(product: IProduct) {
+  buy(product: Product) {
     this.productBought.emit(product);
   }
 }
