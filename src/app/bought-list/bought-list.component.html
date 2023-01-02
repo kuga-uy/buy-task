@@ -1,0 +1,16 @@
+<div class="cartContainer center">
+  <h2>Bought</h2>
+  <ul *ngFor="let product of boughtList">
+    <li class="card center">
+      <span
+        >DESCRIPTION: <b>{{ product.description }}</b></span
+      >
+      <span
+        >PRICE: <b>{{ product.price }}</b></span
+      >
+      <span
+        >QUANTITY:<b> {{ product.quantity }}</b></span
+      >
+    </li>
+  </ul>
+</div>

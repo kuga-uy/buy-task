@@ -1,0 +1,17 @@
+<div class="cartContainer center">
+  <h2>Cart</h2>
+  <ul *ngFor="let product of products">
+    <li class="card center">
+      <span
+        >DESCRIPTION: <b>{{ product.description }}</b></span
+      >
+      <span
+        >PRICE: <b>{{ product.price }}</b></span
+      >
+      <span
+        >QUANTITY:<b> {{ product.quantity }}</b></span
+      >
+      <button (click)="buy(product)" type="submit">BUY</button>
+    </li>
+  </ul>
+</div>

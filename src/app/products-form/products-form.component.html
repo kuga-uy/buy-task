@@ -1,0 +1,20 @@
+<h1>Store List</h1>
+
+<main class="listsContainer">
+  <div>
+    <label for="description">DESCRIPTION</label>
+    <input id="description" type="text" [(ngModel)]="product.description" />
+    <label for="price">PRICE</label>
+    <input id="price" type="number" [(ngModel)]="product.price" />
+    <label for="quantity">QUANTITY</label>
+    <input id="quantity" type="number" [(ngModel)]="product.quantity" />
+    <button type="submit" (click)="addToList($event)">Add to list</button>
+  </div>
+
+  <app-cart
+    [products]="productsList"
+    (click)="buy(product)"
+    (productBought)="bought($event)"
+  ></app-cart>
+  <app-bought-list [boughtList]="boughtList"></app-bought-list>
+</main>
